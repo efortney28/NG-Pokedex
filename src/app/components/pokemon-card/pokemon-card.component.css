@@ -1,0 +1,34 @@
+.poke-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5em 1em;
+    background-color: var(--card-color);
+    padding: 1em;
+    border-radius: 3px;
+}
+
+.poke-card:hover {
+    z-index: 99;
+    box-shadow: 2px 2px 5px #555;
+}
+
+.poke-types {
+    display: flex;
+    flex-direction: row;
+}
+
+.pokemon-name {
+    font-weight: 300;
+}
+
+.detail {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.detail-title {
+    font-weight: 300;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,24 @@
+<header>
+    <h1 class="site-title">{{ title }}</h1>
+    <div class="search">
+        <fa-icon
+            [icon]="faSearch"
+            (click)="toggleSearch()"
+        ></fa-icon>
+        <form
+            *ngIf="search"
+            class="search-form"
+            (ngSubmit)="onSubmit($event)">
+            <div class="form-control">
+                <input
+                    type="text"
+                    name="searchText"
+                    id="searchText"
+                    [(ngModel)]="searchText"
+                    (keydown.enter)="onSubmit($event)"
+                    placeholder="Search...."
+                />
+            </div>
+        </form>
+    </div>
+</header>
