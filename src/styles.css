@@ -9,7 +9,7 @@
     --header-color: #673AB7;
     --header-font-color: #EEE;
     --background-color: #222;
-    --card-color: #444;
+    --card-color: #333;
     background-color: var(--background-color);
     color: var(--header-font-color);
     font-family: 'Roboto', sans-serif;

@@ -122,7 +122,7 @@ export class TypesBadgeComponent implements OnInit {
 
   getBadgeStyle(): Object {
     return {
-      border: '1px solid ' + this.color,
+      border: '2px solid ' + this.color,
       color: this.color,
       padding: '0.25em 0.5em',
     }
