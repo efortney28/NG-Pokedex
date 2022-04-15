@@ -15,6 +15,7 @@ export class PokemonCardComponent implements OnInit {
   @Input() initialInfo: InitialResults = {"name": "", "url": ""};
   pokeDetails: PokemonDetails | undefined;
   types: PokemonType[] | undefined;
+  moreInfo: boolean = false;
 
   constructor(private apiService: ApiService) { }
 
@@ -28,6 +29,9 @@ export class PokemonCardComponent implements OnInit {
     console.log(this.pokeDetails)
   }
 
+  handleClick(): void {
+    this.moreInfo = !this.moreInfo;
+  }
 
 
 }

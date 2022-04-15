@@ -1,4 +1,4 @@
-<div class="poke-card">
+<div class="poke-card" (click)="handleClick()">
     <h3 class="pokemon-name">{{ pokeDetails ? pokeDetails.name[0].toUpperCase() + pokeDetails.name.substring(1) : 'Loading....' }}</h3>
     <div class="poke-types">
         <app-types-badge
@@ -6,8 +6,17 @@
             [type]="type.type"
         ></app-types-badge>
     </div>
-    <img width="200px" src="{{ pokeDetails ? pokeDetails.sprites.front_default : 'http://via.placeholder.com/640x360' }}" />
-    <p class="detail"><span class="detail-title">Pokédex Number:</span> {{ pokeDetails ? pokeDetails.id : 'Loading....' }}</p>
-    <p class="detail"><span class="detail-title">Height:</span> {{ pokeDetails ? pokeDetails.height : 'Loading....' }}</p>
-    <p class="detail"><span class="detail-title">Weight:</span> {{ pokeDetails ? pokeDetails.weight : 'Loading....' }}</p>
+
+    <div *ngIf="moreInfo">
+        <img width="200px" src="{{ pokeDetails ? pokeDetails.sprites.front_default : 'http://via.placeholder.com/640x360' }}" />
+        <p *ngFor="move of pokeDetails.moves" class="detail"><span class="detail-title">Moves: </span> {{ move.name }}</p>
+    </div> 
+
+    <div *ngIf="!moreInfo">
+        <img width="200px" src="{{ pokeDetails ? pokeDetails.sprites.front_default : 'http://via.placeholder.com/640x360' }}" />
+        <p class="detail"><span class="detail-title">Pokédex Number:</span> {{ pokeDetails ? pokeDetails.id : 'Loading....' }}</p>
+        <p class="detail"><span class="detail-title">Height:</span> {{ pokeDetails ? pokeDetails.height : 'Loading....' }}</p>
+        <p class="detail"><span class="detail-title">Weight:</span> {{ pokeDetails ? pokeDetails.weight : 'Loading....' }}</p>
+    </div>   
+
 </div>
