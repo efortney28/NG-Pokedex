@@ -15,7 +15,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getFirstTwentyPokemon(): Observable<InitialAPIResponse> {
-    return this.http.get<InitialAPIResponse>(this.apiUrl + '?limit=20');
+    return this.http.get<InitialAPIResponse>(this.apiUrl + '?limit=35');
   }
 
   getPokemonDetails(url: string): Observable<PokemonDetails> {
